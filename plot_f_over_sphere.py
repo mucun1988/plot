@@ -33,7 +33,7 @@ def plot_f_over_sphere(f, n=1001):
     mlab.figure(1, bgcolor=(1, 1, 1), fgcolor=(0, 0, 0), size=(400, 400))
     mlab.clf()
 
-    mlab.mesh(x, y, z, scalars=s, colormap='Spectral')
+    mlab.mesh(x, y, z, scalars=s, colormap='jet')
     mlab.colorbar(orientation='vertical')
     mlab.outline()
     mlab.axes()
@@ -43,6 +43,6 @@ def plot_f_over_sphere(f, n=1001):
 
 Q = np.random.randn(3, 3)
 Q = Q / 2 + Q.T / 2
-b = np.zeros(3)
+b = np.array([-1, 1, -1])
 
 plot_f_over_sphere(f=quadratic)
